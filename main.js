@@ -29,19 +29,36 @@
 //інакше відобразити:"Не знаєте? ECMAScript!"
 
 
-const userInputInLowerCase = prompt("Яка офіційна назва JavaScript?").toLowerCase();
+// const userInputInLowerCase = prompt("Яка офіційна назва JavaScript?").toLowerCase();
 
-console.log(userInputInLowerCase);
-const officialName = "ECMAScript".toLowerCase();
+// console.log(userInputInLowerCase);
+// const officialName = "ECMAScript".toLowerCase();
 
 
-// if (userInputInLowerCase === officialName) {
-//   alert("Вірно!");
-// } else {
-//   alert("Не знаєте? ECMAScript!");
-// }
+// // if (userInputInLowerCase === officialName) {
+// //   alert("Вірно!");
+// // } else {
+// //   alert("Не знаєте? ECMAScript!");
+// // }
 
-let message = "Не знаєте? ECMAScript!"
-message = userInputInLowerCase === officialName ? "Вірно!" : message;
-alert(message);
+// let message = "Не знаєте? ECMAScript!"
+// message = userInputInLowerCase === officialName ? "Вірно!" : message;
+// alert(message);
+
+// Напишіть цикл, який виводить у консоль
+// числа від max до min за спаданням
+// Додайте усі парні числа від  max  до min
+const max = 50;
+const min = 23;
+let sum = 0;
+for (let i = max; i > min; i-=1) {
+    
+    if (i % 2 !== 0) {
+      
+        continue;
+    }
+    sum += i;
+}
+console.log(sum);
+
 
