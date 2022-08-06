@@ -84,8 +84,28 @@
 //введе число більше 100, або натисне кнопку
 //Скасування в prompt
 //Потрібно додати перевірку, що користувач вводить числа
-let number = prompt("Введіть число більше 100");
-while (number < 100 && number !== null) {
-  number = prompt("Введіть число більше 100");
-}
-console.log(`Ви ввели ${number}`);
+// let number = prompt("Введіть число більше 100");
+// while (number < 100 && number !== null) {
+//   number = prompt("Введіть число більше 100");
+// }
+// console.log(`Ви ввели ${number}`);
+
+
+// Task - 6
+
+//Даний рядок, що складається із символів, наприклад, 'abcde'.
+// Перевірте, що першим символом цього рядка є буква 'a'.
+// Якщо це так - виведіть 'так', інакше виведіть 'ні'.
+
+// const string = "sdd";
+
+// const firstLetter = string[0];
+
+// const message = firstLetter === 'a' ? 'так' : 'ні';
+// console.log(message);
+
+// const string = 'aashgk';
+
+// console.log(string.startsWith('a'));
+// const message = string.startsWith('a') ? 'так' : 'ні';
+// console.log(message);
