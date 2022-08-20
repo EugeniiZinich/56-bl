@@ -231,16 +231,47 @@ const cars = [
 */// console.table(sortByModel(cars, 'asc'));
 // console.table(sortByModel(cars, 'desc'));
 
-const sortByModel = (cars, order) => {
-  if (order === 'asc') {
-    return [...cars].sort((a, b) => a.model.localeCompare(b.model))
+// const sortByModel = (cars, order) => {
+//   if (order === 'asc') {
+//     return [...cars].sort((a, b) => a.model.localeCompare(b.model))
     
-  }
-  if (order === 'desc') {
-    return [...cars].sort((a, b) => b.model.localeCompare(a.model))
+//   }
+//   if (order === 'desc') {
+//     return [...cars].sort((a, b) => b.model.localeCompare(a.model))
     
 
-  };
+//   };
+// };
+// console.table(sortByModel(cars, 'asc'));
+// console.table(sortByModel(cars, 'desc'));
+
+
+
+const sortByModel = (cars, order) => {
+  // if (order === 'asc') {
+  //   return [...cars].sort((a, b) => a.model.localeCompare(b.model))
+    
+  // }
+  // if (order === 'desc') {
+  //   return [...cars].sort((a, b) => b.model.localeCompare(a.model))
+    
+
+  // };
+
+  // console.log(order !== 'asc');
+  // console.log(order !== 'desc');
+
+  if (order !== 'asc' && order !== 'desc') {
+    
+    return;
+  }
+  
+  return [...cars].sort((a, b) => {
+return order === 'asc'? a.model.localeCompare(b.model):b.model.localeCompare(a.model)
+})
+
+
+
 };
 console.table(sortByModel(cars, 'asc'));
 console.table(sortByModel(cars, 'desc'));
