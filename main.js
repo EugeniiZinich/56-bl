@@ -90,7 +90,6 @@
 // }
 // console.log(`Ви ввели ${number}`);
 
-
 // Task - 6
 
 //Даний рядок, що складається із символів, наприклад, 'abcde'.
@@ -109,3 +108,21 @@
 // console.log(string.startsWith('a'));
 // const message = string.startsWith('a') ? 'так' : 'ні';
 // console.log(message);
+
+// У змінній min лежить число від 0 до 59.
+// Визначте, в яку чверть години потрапляє
+// це число(у першу, другу, третю чи четверту).
+
+// const min = 45;
+
+// if (min > 0 && min <= 14) {
+//   console.log("Перша четверть");
+// } else if (min >= 15 && min <= 29) {
+//   console.log("Друга четверть");
+// } else if (min >= 30 && min <= 44) {
+//   console.log("Третя четверть");
+// } else if (min >= 45 && min < 60) {
+//   console.log("Четверта четверть");
+// } else {
+//   console.log("Ми не потрапили в діапазон");
+// }
