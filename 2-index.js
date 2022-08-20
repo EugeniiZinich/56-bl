@@ -137,25 +137,88 @@
 
 //Потрібно перевірити "same" масиви
 // числа з першого в квадраті
-const a = [121, 144, 19, 161, 19, 144, 19, 11];
-const b = [121, 14641, 20736, 361, 25921, 361, 20736, 361];
-function sameAray(aray1, aray2) {
-  console.log(aray1);
-  console.log(aray2);
-  if (aray1.length !== aray2.length) {
-    console.log("не однакові");
-    return;
-  }
-  const sqrAray2 = aray2.map((number) => Math.sqrt(number));
-  console.log(sqrAray2);
-  const sortedAray1 = aray1.sort((a, b) => a - b);
-  const sortedAray2 = sqrAray2.sort((a, b) => a - b);
-  for (let i = 0; i < sortedAray1.length; i++) {
-    if (sortedAray1[i] !== sortedAray2[i]) {
-      return false;
-    }
-    return true;
-  }
+// const a = [121, 144, 19, 161, 19, 144, 19, 11];
+// const b = [121, 14641, 20736, 361, 25921, 361, 20736, 361];
+// function sameAray(aray1, aray2) {
+//   console.log(aray1);
+//   console.log(aray2);
+//   if (aray1.length !== aray2.length) {
+//     console.log("не однакові");
+//     return;
+//   }
+//   const sqrAray2 = aray2.map((number) => Math.sqrt(number));
+//   console.log(sqrAray2);
+//   const sortedAray1 = aray1.sort((a, b) => a - b);
+//   const sortedAray2 = sqrAray2.sort((a, b) => a - b);
+//   for (let i = 0; i < sortedAray1.length; i++) {
+//     if (sortedAray1[i] !== sortedAray2[i]) {
+//       return false;
+//     }
+//     return true;
+//   }
+// }
+
+// console.log(sameAray(a, b));
+
+
+// Tusk2-7
+// ? Нехай функція sortByAscendingAmount повертає новий масив автомобілів відсортований
+// ? по збільшенню значення властивості amount.
+// */
+
+const cars = [
+{
+    make: 'Toyota',
+    model: '4Runner',
+    type: 'suv',
+    amount: 19,
+    price: 34210,
+    onSale: false,
+  },
+  {
+    make: 'Toyota',
+    model: 'Sequoia',
+    type: 'suv',
+    amount: 16,
+    price: 45560,
+    onSale: false,
+  },
+  {
+    make: 'Toyota',
+    model: 'Tacoma',
+    type: 'truck',
+    amount: 4,
+    price: 24320,
+    onSale: true,
+  },
+  {
+    make: 'Ford',
+    model: 'F-150',
+    type: 'truck',
+    amount: 11,
+    price: 27110,
+    onSale: true,
+  },
+  {
+    make: 'Ford',
+    model: 'Fusion',
+    type: 'sedan',
+    amount: 13,
+    price: 22120,
+  },
+  {
+    make: 'Ford',
+    model: 'Explorer',
+    type: 'suv',
+    amount: 6,
+    price: 31660,
+    onSale: false,
+  },
+];
+
+const sortByAscendingAmount = cars => {
+  
+  return [...cars].sort((a, b) => a.amount - b.amount);
 }
 
-console.log(sameAray(a, b));
+console.table(sortByAscendingAmount(cars));
