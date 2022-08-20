@@ -35,7 +35,6 @@
 //   console.log(`${key}:${user[key]}`);
 // }
 
-
 // Task 2 - 2
 /*
 ? У нас є об'єкт, де зберігаються зарплати нашої команди.
@@ -54,12 +53,11 @@
 //   let sum = 0;
 //   for (const value of values) {
 //     sum += value;
-    
+
 //   }
 //   return sum;
 // }
 // console.log(totalSalaries(salaries));
-
 
 /*
 ? Напишіть ф-цію calcTotalPrice(stones, stoneName), яка приймає масив об'єктів та рядок
@@ -75,19 +73,42 @@
 //   { name: 'Смарагд', price: 1300, quantity: 4 }
 // ];
 
-
 // const calcTotalPrice = (stones, stoneName) => {
 //   let totalPrice = 0;
 //   for (const stone of stones) {
 //     if (stone.name === stoneName) {
 //       console.log(stone);
-      
+
 //       totalPrice += (stone.price * stone.quantity);
 
 //     }
-    
+
 //   }
 //     return totalPrice
 // }
 
 // console.log(calcTotalPrice(stones, 'Смарагд' ));
+
+//4. Створіть об'єкт calculator із трьома методами
+//read(a, b) - приймає два аргументи та зберігає їх
+//як властивості об'єкта
+//sum() повертає суму збережених значень
+//mult() перемножує збережені значення та повертає результат
+
+const calculator = {
+  read(a, b) {
+    this.a = a;
+    this.b = b;
+  },
+
+  sum() {
+    return this.a + this.b;
+  },
+
+  mult() {
+    return this.a * this.b;
+  },
+};
+
+console.log(calculator.read(5, 10));
+console.log(calculator.sum());
