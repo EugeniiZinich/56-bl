@@ -95,20 +95,42 @@
 //sum() повертає суму збережених значень
 //mult() перемножує збережені значення та повертає результат
 
-const calculator = {
-  read(a, b) {
-    this.a = a;
-    this.b = b;
-  },
+// const calculator = {
+//   read(a, b) {
+//     this.a = a;
+//     this.b = b;
+//   },
 
-  sum() {
-    return this.a + this.b;
-  },
+//   sum() {
+//     return this.a + this.b;
+//   },
 
-  mult() {
-    return this.a * this.b;
-  },
-};
+//   mult() {
+//     return this.a * this.b;
+//   },
+// };
 
-console.log(calculator.read(5, 10));
-console.log(calculator.sum());
+// console.log(calculator.read(5, 10));
+// console.log(calculator.sum());
+
+// // Створення масиву значень Фаренгейта із масиву значень Цельсія
+// let celsius = [-15, -5, 0, 10, 16, 20, 24, 32];
+// let fahrenheit = celsius.map((t) => t * 1.8 + 32);
+// console.log();\
+
+//Знайти унікальні елементи за допомогою reduce
+// const numbers = [1, 9, 0, 1, 5, 9, 1, 6];
+// const unityNumbers = numbers.reduce((acc, number) => {
+//   if (!acc.includes(number)) {
+//     acc.push(number);
+//   }
+
+//   return acc;
+// }, []);
+// console.log(unityNumbers);
+const numbers = [1, 9, 0, 1, 5, 9, 1, 6];
+const unityNumbers = numbers.reduce(
+  (acc, number) => (acc.includes(number) ? acc : [...acc, number]),
+  []
+);
+console.log(unityNumbers);
