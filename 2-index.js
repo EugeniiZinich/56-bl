@@ -128,9 +128,34 @@
 //   return acc;
 // }, []);
 // console.log(unityNumbers);
-const numbers = [1, 9, 0, 1, 5, 9, 1, 6];
-const unityNumbers = numbers.reduce(
-  (acc, number) => (acc.includes(number) ? acc : [...acc, number]),
-  []
-);
-console.log(unityNumbers);
+// const numbers = [1, 9, 0, 1, 5, 9, 1, 6];
+// const unityNumbers = numbers.reduce(
+//   (acc, number) => (acc.includes(number) ? acc : [...acc, number]),
+//   []
+// );
+// console.log(unityNumbers);
+
+//Потрібно перевірити "same" масиви
+// числа з першого в квадраті
+const a = [121, 144, 19, 161, 19, 144, 19, 11];
+const b = [121, 14641, 20736, 361, 25921, 361, 20736, 361];
+function sameAray(aray1, aray2) {
+  console.log(aray1);
+  console.log(aray2);
+  if (aray1.length !== aray2.length) {
+    console.log("не однакові");
+    return;
+  }
+  const sqrAray2 = aray2.map((number) => Math.sqrt(number));
+  console.log(sqrAray2);
+  const sortedAray1 = aray1.sort((a, b) => a - b);
+  const sortedAray2 = sqrAray2.sort((a, b) => a - b);
+  for (let i = 0; i < sortedAray1.length; i++) {
+    if (sortedAray1[i] !== sortedAray2[i]) {
+      return false;
+    }
+    return true;
+  }
+}
+
+console.log(sameAray(a, b));
