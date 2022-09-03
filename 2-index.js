@@ -216,9 +216,62 @@ const cars = [
   },
 ];
 
-const sortByAscendingAmount = cars => {
+// const sortByAscendingAmount = cars => {
   
-  return [...cars].sort((a, b) => a.amount - b.amount);
-}
+//   return [...cars].sort((a, b) => a.amount - b.amount);
+// }
 
-console.table(sortByAscendingAmount(cars));
+// console.table(sortByAscendingAmount(cars));
+
+
+// task_2-8___________________________
+/*
+? Нехай функція sortByModel повертає новий масив автомобілів, відсортований за назвою моделі
+? в алфавітному та зворотному алфавітному порядку, залежно від значення параметра order.
+*/// console.table(sortByModel(cars, 'asc'));
+// console.table(sortByModel(cars, 'desc'));
+
+// const sortByModel = (cars, order) => {
+//   if (order === 'asc') {
+//     return [...cars].sort((a, b) => a.model.localeCompare(b.model))
+    
+//   }
+//   if (order === 'desc') {
+//     return [...cars].sort((a, b) => b.model.localeCompare(a.model))
+    
+
+//   };
+// };
+// console.table(sortByModel(cars, 'asc'));
+// console.table(sortByModel(cars, 'desc'));
+
+
+
+const sortByModel = (cars, order) => {
+  // if (order === 'asc') {
+  //   return [...cars].sort((a, b) => a.model.localeCompare(b.model))
+    
+  // }
+  // if (order === 'desc') {
+  //   return [...cars].sort((a, b) => b.model.localeCompare(a.model))
+    
+
+  // };
+
+  // console.log(order !== 'asc');
+  // console.log(order !== 'desc');
+
+  if (order !== 'asc' && order !== 'desc') {
+    
+    return;
+  }
+  
+  return [...cars].sort((a, b) => {
+return order === 'asc'? a.model.localeCompare(b.model):b.model.localeCompare(a.model)
+})
+
+
+
+};
+console.table(sortByModel(cars, 'asc'));
+console.table(sortByModel(cars, 'desc'));
