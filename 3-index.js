@@ -127,22 +127,72 @@
 //isEqualSymbols('кот', 'ток'); // выведет true
 //isEqualSymbols('кот', 'тик'); // выведет false
 
-const isEqualSymbols = (string1, string2) => {
-  const aray1 = [...string1];
-  const aray2 = [...string2];
-  console.log(aray1);
-  console.log(aray2);
-  if (aray1.length !== aray2.length) {
-    return false;
-  }
-  for (let i = 0; i < aray1.length; i++) {
-    const element = aray1[i];
-    const ithIncludes = aray2.includes(element);
-    if (ithIncludes === false) {
-      return false;
-    }
-  }
-  return true;
-};
-console.log(isEqualSymbols("кот", "ток"));
+// const isEqualSymbols = (string1, string2) => {
+//   const aray1 = [...string1];
+//   const aray2 = [...string2];
+//   console.log(aray1);
+//   console.log(aray2);
+//   if (aray1.length !== aray2.length) {
+//     return false;
+//   }
+//   for (let i = 0; i < aray1.length; i++) {
+//     const element = aray1[i];
+//     const ithIncludes = aray2.includes(element);
+//     if (ithIncludes === false) {
+//       return false;
+//     }
+//   }
+//   return true;
+// };
+// console.log(isEqualSymbols("кот", "ток"));
 // console.log(isEqualSymbols("кот", "тик"));
+
+//6. Собрать в allTopics массив всех предметов всех курсов
+//Выполнить фильтрацию, оставив в uniqueTopics только уникальные элементы с помощью reduce
+const courses = [
+  {
+    name: "Basic HTML+CSS",
+    topics: ["VSCode", "HTML", "CSS", "GitHub", "GitHub Desctop"],
+  },
+  {
+    name: "Intermediate HTML+CSS",
+    topics: ["VSCode", "HTML", "CSS", "GitHub", "Git", "Terminal"],
+  },
+  {
+    name: "Basic JavaScript",
+    topics: [
+      "VSCode",
+      "Type system",
+      "Loops",
+      "Function",
+      "Git",
+      "Conditions",
+      "Classes",
+      "GitHub",
+      "DOM",
+    ],
+  },
+  {
+    name: "Intermediate JavaScript",
+    topics: [
+      "VSCode",
+      "NPM",
+      "Bundlers",
+      "Transpiling",
+      "Git",
+      "Promises",
+      "AJAX",
+      "GitHub",
+    ],
+  },
+];
+const allTopics = courses
+  .flatMap((item) => item.topics)
+  .reduce((acc, item) => {
+    if (acc.includes(item)) {
+      return acc;
+    }
+    return [...acc, item];
+  }, [])
+  .sort((a, b) => a.localeCompare(b));
+console.log(allTopics);
