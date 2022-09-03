@@ -56,8 +56,6 @@
 // client2.login = "Poly";
 // console.log(client2.login);
 
-
-
 // _______________________
 //Напиши класс Notes который управляет коллекцией заметок в
 //свойстве items.
@@ -67,54 +65,84 @@
 //Добавь методы addNote(note), removeNote(text)
 //updatePriority(text, newPriority)
 
+// class Notes {
+//   static PRIORITY() {
+//     return {
+//       HIGHT: "hight",
+//       LOW: "low",
+//     };
+//   }
 
-class Notes {
-  static PRIORITY() {
-    return {
-      HIGHT: "hight",
-      LOW: "low",
-    };
+//   constructor() {
+//     this.items = []
+//   }
+
+//   addNote(note) {
+//   this.items.push(note)
+//   }
+
+//   removeNote(text) {
+//     this.items = this.items.filter((item) => item.text !== text)
+//   }
+
+//   updatePriority(text, newPriority){
+//     // const changePriority = this.items.find((item => item.text === text));
+//     // if (changePriority) {
+//     //   changePriority.priority = newPriority;
+//     // }
+//     // console.log(changePriority);
+
+//     this.items = this.items.map(item => {
+//       if (item.text === text) {
+//         item.priority = newPriority
+//         return item;
+//       }
+//       return item;
+// })
+
+//   }
+// };
+
+// const note1 = new Notes();
+
+// note1.addNote({text: 'Mango', priority: Notes.PRIORITY().HIGHT})
+// note1.addNote({text: 'Poly', priority: Notes.PRIORITY().LOW})
+// note1.addNote({text: 'Ajax', priority: Notes.PRIORITY().HIGHT})
+
+// // note1.removeNote('Poly');
+
+// note1.updatePriority('Poly', Notes.PRIORITY().HIGHT);
+// console.log(note1);
+
+// Task5
+//5. Создать класс Worker у которого есть свойства name, age, salary.
+//У класса Worker есть метод getSalary.
+//Создать класс TopLevelWorker у которого есть свойство hierarchyLevel
+//и который наследует класс Worker, добавляя метод getHierarchyLevel
+
+class Worker {
+  constructor({ name, age, salary }) {
+    this.name = name;
+    this.age = age;
+    this.salary = salary;
   }
 
-  constructor() {
-    this.items = []
+  getSalary() {
+    return this.salary;
   }
+}
 
-  addNote(note) {
-  this.items.push(note)
+class TopLevelWorker extends Worker {
+  constructor({ name, age, salary, hierarchyLevel }) {
+    super({ name, age, salary });
+    this.hierarchyLevel = hierarchyLevel;
   }
-  
-  removeNote(text) {
-    this.items = this.items.filter((item) => item.text !== text)
-  }
+}
 
-  updatePriority(text, newPriority){
-    // const changePriority = this.items.find((item => item.text === text));
-    // if (changePriority) {
-    //   changePriority.priority = newPriority;
-    // }
-    // console.log(changePriority);
-
-
-    this.items = this.items.map(item => {
-      if (item.text === text) {
-        item.priority = newPriority
-        return item;
-      }
-      return item;
-})
-
-  }
-};
-
-const note1 = new Notes();
-
-note1.addNote({text: 'Mango', priority: Notes.PRIORITY().HIGHT})
-note1.addNote({text: 'Poly', priority: Notes.PRIORITY().LOW})
-note1.addNote({text: 'Ajax', priority: Notes.PRIORITY().HIGHT})
-
-// note1.removeNote('Poly');
-
-note1.updatePriority('Poly', Notes.PRIORITY().HIGHT);
-console.log(note1);
-
+const LowLevelWorker = new TopLevelWorker({
+  name: "Kiwi",
+  age: "28",
+  salary: "2500",
+  hierarchyLevel: "25",
+});
+console.log(LowLevelWorker);
