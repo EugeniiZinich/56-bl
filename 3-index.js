@@ -55,3 +55,66 @@
 // const client2 = new Client({ login: "Mango", email: "panivnykm@gmail.com" });
 // client2.login = "Poly";
 // console.log(client2.login);
+
+
+
+// _______________________
+//Напиши класс Notes который управляет коллекцией заметок в
+//свойстве items.
+//Заметка это объект со свойствами text, priority
+//Добавь классу статическое свойство Priority,
+//в котором будет храниться объект с приоритетами.
+//Добавь методы addNote(note), removeNote(text)
+//updatePriority(text, newPriority)
+
+
+class Notes {
+  static PRIORITY() {
+    return {
+      HIGHT: "hight",
+      LOW: "low",
+    };
+  }
+
+  constructor() {
+    this.items = []
+  }
+
+  addNote(note) {
+  this.items.push(note)
+  }
+  
+  removeNote(text) {
+    this.items = this.items.filter((item) => item.text !== text)
+  }
+
+  updatePriority(text, newPriority){
+    // const changePriority = this.items.find((item => item.text === text));
+    // if (changePriority) {
+    //   changePriority.priority = newPriority;
+    // }
+    // console.log(changePriority);
+
+
+    this.items = this.items.map(item => {
+      if (item.text === text) {
+        item.priority = newPriority
+        return item;
+      }
+      return item;
+})
+
+  }
+};
+
+const note1 = new Notes();
+
+note1.addNote({text: 'Mango', priority: Notes.PRIORITY().HIGHT})
+note1.addNote({text: 'Poly', priority: Notes.PRIORITY().LOW})
+note1.addNote({text: 'Ajax', priority: Notes.PRIORITY().HIGHT})
+
+// note1.removeNote('Poly');
+
+note1.updatePriority('Poly', Notes.PRIORITY().HIGHT);
+console.log(note1);
+
