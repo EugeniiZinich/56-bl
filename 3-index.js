@@ -120,29 +120,29 @@
 //Создать класс TopLevelWorker у которого есть свойство hierarchyLevel
 //и который наследует класс Worker, добавляя метод getHierarchyLevel
 
-class Worker {
-  constructor({ name, age, salary }) {
-    this.name = name;
-    this.age = age;
-    this.salary = salary;
-  }
+// /////////////////////////////////////////
+//Необходимо написать функцию (isEqualSymbols), принимающую
+//в аргументах две строки и возвращающую true, если эти строки
+//состоят из идентичных букв и false в противном случае.
+//isEqualSymbols('кот', 'ток'); // выведет true
+//isEqualSymbols('кот', 'тик'); // выведет false
 
-  getSalary() {
-    return this.salary;
+const isEqualSymbols = (string1, string2) => {
+  const aray1 = [...string1];
+  const aray2 = [...string2];
+  console.log(aray1);
+  console.log(aray2);
+  if (aray1.length !== aray2.length) {
+    return false;
   }
-}
-
-class TopLevelWorker extends Worker {
-  constructor({ name, age, salary, hierarchyLevel }) {
-    super({ name, age, salary });
-    this.hierarchyLevel = hierarchyLevel;
+  for (let i = 0; i < aray1.length; i++) {
+    const element = aray1[i];
+    const ithIncludes = aray2.includes(element);
+    if (ithIncludes === false) {
+      return false;
+    }
   }
-}
-
-const LowLevelWorker = new TopLevelWorker({
-  name: "Kiwi",
-  age: "28",
-  salary: "2500",
-  hierarchyLevel: "25",
-});
-console.log(LowLevelWorker);
+  return true;
+};
+console.log(isEqualSymbols("кот", "ток"));
+// console.log(isEqualSymbols("кот", "тик"));
