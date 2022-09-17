@@ -8,6 +8,8 @@ musicBtnListRef.addEventListener("transitionend", (evt) => {
   evt.target.classList.remove("playing");
 });
 
+document.addEventListener('keydown', onKeyPress);
+
 function onMusicBtnClick(evt) {
   const target = evt.target;
 
@@ -29,4 +31,14 @@ function playSound(key) {
   }
   audio.currentTime = 0;
   audio.play();
+}
+
+function onKeyPress({keyCode}) {
+  playSound(keyCode);
+  const li = document.querySelector(`li[data-key="${keyCode}"]`);
+  if (!li) {
+    return;
+  }
+  li.classList.add("playing");
+
 }
